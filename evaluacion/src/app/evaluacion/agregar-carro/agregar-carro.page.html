@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar Carro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Marca</ion-label>
+    <ion-input [(ngModel)]="carro.marca"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Placa</ion-label>
+    <ion-input [(ngModel)]="carro.placa"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Precio</ion-label>
+    <ion-input  [(ngModel)]="carro.precio"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button color="primary" (click)="guardar()">Guardar</ion-button>
+  </ion-item>
+
+ 
+</ion-content>

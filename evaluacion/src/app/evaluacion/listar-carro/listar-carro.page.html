@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listar Carros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div>
+    <h2>Busqueda por Placa:</h2>
+    <ion-item>
+      <ion-label position="floating">Placa</ion-label>
+      <ion-input  [(ngModel)]="carro2.placa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button color="primary" (click)="buscar()">buscar</ion-button>
+    </ion-item>
+  </div>
+
+  <div>
+    <h2></h2>
+  </div>
+
+  <h2>Lista total de Carros:</h2>
+  <ion-list *ngFor="let carro of carros | async">
+    <ion-item >
+      <ion-label>
+        {{carro.marca}}
+      </ion-label>
+      <ion-label>
+        {{carro.placa}}
+      </ion-label>
+      <ion-label>
+        {{carro.precio}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h2>Resultados de la Busqueda:</h2>
+  <ion-list *ngFor="let carro of busqueda | async">
+    <ion-item >
+      <ion-label>
+        {{carro.marca}}
+      </ion-label>
+      <ion-label>
+        {{carro.placa}}
+      </ion-label>
+      <ion-label>
+        {{carro.precio}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+ 
+</ion-content>
